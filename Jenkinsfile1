@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh whoami
+                touch file.tx
 
             }
         }
@@ -20,6 +21,7 @@ pipeline {
             steps{
                 sh pwd
                 sh du -h
+                echo 'webhook wahala'
             }
         }
     }
