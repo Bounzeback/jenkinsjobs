@@ -4,25 +4,40 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh whoami
-                touch file.tx
-
+                echo 'Building the project...'
+                // Add build steps here
             }
         }
 
         stage('Test') {
             steps {
-                sh df -h
-                 touch team6
+                echo 'Running tests...'
+                // Add test steps here
             }
         }
 
-        stage(backup){
-            steps{
-                sh pwd
-                sh du -h
-                echo 'webhook trigger'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                // Add deployment steps here
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up...'
+            // Add cleanup steps here
+        }
+
+        success {
+            echo 'Pipeline executed successfully'
+            echo 'Group members: John, Sarah, and Michael'
+        }
+
+        failure {
+            echo 'Pipeline execution failed'
+            echo 'Group members: John, Sarah, and Michael'
         }
     }
 }
