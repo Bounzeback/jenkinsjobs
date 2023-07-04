@@ -21,7 +21,7 @@ pipeline {
             steps{
                 sh pwd
                 sh du -h
-                echo 'webhook nawa'
+                echo 'webhook trigger'
             }
         }
     }
