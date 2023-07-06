@@ -1,9 +1,9 @@
 pipeline{
     agent any
-        stages {
-        stage('Build') {
-            steps {
-               checkout scmGit(branches: [[name: '*/job1']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Bounzeback/jenkinsjobs/blob/job1/Jenkinsfile']])
+        stages{
+        stage('Build'){
+            steps{
+               checkout scmGit(branches: [[name: '*/job1']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Bounzeback/jenkinsjobs.git']])
             }
         }
         stages{
